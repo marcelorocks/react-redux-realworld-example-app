@@ -86,11 +86,17 @@ const Profile = {
     requests.del(`/profiles/${username}/follow`)
 };
 
+const Users = {
+  authors: page =>
+    requests.get(`/users/authors?${limit(10, page)}`),
+};
+
 export default {
   Articles,
   Auth,
   Comments,
   Profile,
   Tags,
+  Users,
   setToken: _token => { token = _token; }
 };
